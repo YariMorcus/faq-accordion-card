@@ -13,6 +13,7 @@ html {
 /* Set core body defaults */
 body {
     display: flex;
+    justify-content: center;
     min-height: 100vh;
     text-rendering: optimizeSpeed;
     line-height: 1.5;
@@ -22,6 +23,7 @@ body {
 main {
     display: grid;
     place-items: center;
+    max-width: 33.5rem
 }
 
 /* A elements that don't have a class get default styles */
