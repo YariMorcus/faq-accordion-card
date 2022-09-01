@@ -21,9 +21,8 @@
 
     <article class="faq-accordion">
       <picture class="faq-accordion__picture">
-        <source srcset="img/illustration-woman-online-mobile.svg" media="">
-        <source srcset="img/illustration-woman-online-desktop.svg" media="">
-        <img src="img/illustration-woman-online-mobile.svg" alt="" width="240" height="182">
+        <source class="faq-accordion__image" srcset="img/illustration-woman-online-desktop.svg" media="(min-width: 600px)">
+        <img class="faq-accordion__image" src="img/illustration-woman-online-mobile.svg" alt="" width="240" height="182">
       </picture> <!-- .faq-accordion__picture -->
 
       <section class="faq-accordion__section">
@@ -37,7 +36,7 @@
 
         <div class="faq-accordion__dropdown-container">
           <button class="faq-accordion__question faq-accordion__question--selected">What is the maximum file upload size?</button>
-          <p class="faq-accordion__answer">No more than 2GB. All files in your account must fit your allotted storage space.</p>
+          <p class="faq-accordion__answer faq-accordion__answer--visible">No more than 2GB. All files in your account must fit your allotted storage space.</p>
         </div> <!-- .faq-accordion__dropdown-container -->
 
         <div class="faq-accordion__dropdown-container">
