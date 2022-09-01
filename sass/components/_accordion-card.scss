@@ -1,0 +1,94 @@
+// Import variables module
+@use '../abstracts/variables' as v;
+
+// Import typography module
+@use '../base/typography' as t;
+
+.faq-accordion {
+    margin-top: 5rem;
+    background-color: v.$white;
+    border-radius: 2.5rem;
+    box-shadow: 0px 45px 77px -50px #000;
+
+    &__picture {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        margin-top: -10.8rem;
+        margin-bottom: 2rem;
+
+        &::after {
+            position: absolute;
+            top: 10.5rem;
+            content: url('../img/bg-pattern-mobile.svg');
+        }
+    }
+
+    &__image {
+        z-index: 1;
+    }
+
+    &__section {
+        position: relative;
+        padding: 3rem 3rem 4rem;
+    }
+
+    &__main-heading {
+        margin-bottom: 1rem;
+        font-family: "Kumbh Sans", sans-serif;
+        color: v.$very-dark-desaturated-blue;
+        font-weight: 700;
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    &__dropdown-container {
+        border-bottom: 1px solid v.$light-grayish-blue;
+    }
+
+    &__question,
+    &__answer {
+        font-family: "Kumbh Sans", sans-serif;
+        font-size: 1.3rem;
+    }
+
+    &__question {
+        position: relative;
+        width: 100%;
+        height: 4rem;
+        text-align: left;
+        background: none;
+        border: none;
+        color: v.$very-dark-grayish-blue;
+        cursor: pointer;
+        
+        &::after {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            content: url('../img/icon-arrow-down.svg');
+        }
+        
+        &--selected {
+            font-weight: 700;
+            color: v.$very-dark-desaturated-blue;
+        
+            &::after {
+                top: initial;
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    &__answer {
+        display: none;
+        color: v.$dark-grayish-blue;
+
+        &--visible {
+            display: block;
+            margin-bottom: 1.35rem;
+            line-height: initial;
+        }
+    }
+}

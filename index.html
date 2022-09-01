@@ -1,16 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <meta name="description" content="A FAQ accordion card made by Yari Morcus. A challenge from Frontend Mentor">
+  <meta name="keywords" content="frontendmentor frontend yarimorcus yari morcus coding challenge faq accordion card">
+  <meta name="author" content="Yari Morcus">
 
-  <link rel="stylesheet" href="css/style.css">
-  
-  <title>Page title</title>
+  <link rel="icon" href="img/favicon-32x32.png" sizes="32x32" type="image/x-icon">
+
+  <link rel="stylesheet" href="styles/main.css">
+
+  <title>FAQ accordion card - Frontend Mentor</title>
 </head>
+
 <body>
 
+  <main>
+
+    <article class="faq-accordion">
+      <picture class="faq-accordion__picture">
+        <source class="faq-accordion__image" srcset="img/illustration-woman-online-desktop.svg" media="(min-width: 600px)">
+        <img class="faq-accordion__image" src="img/illustration-woman-online-mobile.svg" alt="" width="240" height="182">
+      </picture> <!-- .faq-accordion__picture -->
+
+      <section class="faq-accordion__section">
+        <h1 class="faq-accordion__main-heading">FAQ</h1>
+
+        <div class="faq-accordion__dropdown-container">
+          <button class="faq-accordion__question">How many team members can I invite?</button>
+          <p class="faq-accordion__answer">You can invite up to 2 additional users on the Free plan. There is no limit on
+            team members for the Premium plan.</p>
+        </div> <!-- .faq-accordion__dropdown-container -->
+
+        <div class="faq-accordion__dropdown-container">
+          <button class="faq-accordion__question faq-accordion__question--selected">What is the maximum file upload size?</button>
+          <p class="faq-accordion__answer faq-accordion__answer--visible">No more than 2GB. All files in your account must fit your allotted storage space.</p>
+        </div> <!-- .faq-accordion__dropdown-container -->
+
+        <div class="faq-accordion__dropdown-container">
+          <button class="faq-accordion__question">How do I reset my password?</button>
+          <p class="faq-accordion__answer"> Click “Forgot password” from the login page or “Change password” from your profile page.
+            A reset link will be emailed to you.</p>
+        </div> <!-- .faq-accordion__dropdown-container -->
+
+        <div class="faq-accordion__dropdown-container">
+          <button class="faq-accordion__question">Can I cancel my subscription?</button>
+          <p class="faq-accordion__answer">Yes! Send us a message and we’ll process your request no questions asked.</p>
+        </div> <!-- .faq-accordion__dropdown-container -->
+
+        <div class="faq-accordion__dropdown-container">
+          <button class="faq-accordion__question">Do you provide additional support?</button>
+          <p class="faq-accordion__answer">Chat and email support is available 24/7. Phone lines are open during normal business hours.</p>
+        </div> <!-- .faq-accordion__dropdown-container -->
+
+      </section> <!-- .faq-accordion__section -->
+    </article> <!-- .faq-accordion -->
+
+  </main>
 </body>
 </html>
