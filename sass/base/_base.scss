@@ -26,7 +26,6 @@ body {
 main {
     display: grid;
     place-items: center;
-    max-width: 33rem;
 
     @include m.min-width-767px() {
         max-width: 70rem;
