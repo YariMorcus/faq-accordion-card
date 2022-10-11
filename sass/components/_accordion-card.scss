@@ -62,7 +62,11 @@
 
     &__section {
         position: relative;
-        padding: 3rem 3rem 4rem;
+        padding: 4rem 3rem;
+
+        @include m.min-width-767px() {
+            padding: 6rem 3rem;
+        }
     }
 
     &__main-heading {
@@ -72,6 +76,10 @@
         font-weight: 700;
         font-size: 3rem;
         text-align: center;
+
+        @include m.min-width-767px() {
+            text-align: left;
+        }
     }
 
     &__dropdown-container {
@@ -93,6 +101,10 @@
         border: none;
         color: v.$very-dark-grayish-blue;
         cursor: pointer;
+
+        &:hover {
+            color: v.$soft-red;
+        }
         
         &::after {
             position: absolute;
