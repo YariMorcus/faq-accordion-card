@@ -26,10 +26,6 @@ body {
 main {
     display: grid;
     place-items: center;
-
-    @include m.min-width-767px() {
-        max-width: 70rem;
-    }
 }
 
 /* A elements that don't have a class get default styles */
