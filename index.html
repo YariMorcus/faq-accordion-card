@@ -20,10 +20,6 @@
   <main>
 
     <article class="faq-accordion">
-      <!-- <picture class="faq-accordion__picture">
-        <source class="faq-accordion__image" srcset="img/illustration-woman-online-desktop.svg" media="(min-width: 767px)">
-        <img class="faq-accordion__image" src="img/illustration-woman-online-mobile.svg" alt="" width="240" height="182">
-      </picture> .faq-accordion__picture -->
       <div class="faq-accordion__image-container">
         <img class="faq-accordion__image" src="img/illustration-woman-online-mobile.svg" alt="">
       </div>
@@ -38,8 +34,8 @@
         </div> <!-- .faq-accordion__dropdown-container -->
 
         <div class="faq-accordion__dropdown-container">
-          <button class="faq-accordion__question faq-accordion__question--selected">What is the maximum file upload size?</button>
-          <p class="faq-accordion__answer faq-accordion__answer--visible">No more than 2GB. All files in your account must fit your allotted storage space.</p>
+          <button class="faq-accordion__question">What is the maximum file upload size?</button>
+          <p class="faq-accordion__answer">No more than 2GB. All files in your account must fit your allotted storage space.</p>
         </div> <!-- .faq-accordion__dropdown-container -->
 
         <div class="faq-accordion__dropdown-container">
@@ -62,5 +58,32 @@
     </article> <!-- .faq-accordion -->
 
   </main>
+  <script>
+
+    const FAQ_QUESTIONS = document.querySelectorAll('.faq-accordion__question');
+
+    function toggleAnswer(faqQuestion) {
+      
+      const FAQ_ANSWER = faqQuestion.parentElement.lastElementChild;
+      
+      FAQ_ANSWER.classList.toggle('faq-accordion__answer--visible');
+
+    }
+
+    function highlightQuestion(faqQuestion) {
+      faqQuestion.classList.toggle('faq-accordion__question--selected');
+    }
+
+    FAQ_QUESTIONS.forEach((faqQuestion) => {
+      faqQuestion.addEventListener('click', () => {
+
+        toggleAnswer(faqQuestion);
+        highlightQuestion(faqQuestion);
+      })
+    });
+
+
+
+  </script>
 </body>
 </html>
