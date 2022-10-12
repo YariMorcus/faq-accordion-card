@@ -137,13 +137,16 @@
     }
 
     &__answer {
-        display: none;
+        max-height: 0;
+        overflow: hidden;
         color: v.$dark-grayish-blue;
-
+        transition: max-height .1s linear;
+        
         &--visible {
-            display: block;
+            max-height: 10rem;
             margin-bottom: 1.35rem;
             line-height: initial;
+            transition: max-height 1s linear;
         }
     }
 }
