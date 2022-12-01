@@ -29,43 +29,31 @@
         position: relative;
 
         &::after {
-            content: url('../img/bg-pattern-mobile.svg');
             position: absolute;
             bottom: -3.5rem;
             left: 50%;
             transform: translateX(-50%);
-
-            @include m.min-width-767px() {
-                content: url('../img/bg-pattern-desktop.svg');
-                bottom: 0;
-                left: -20rem;
-            }
+            content: url(../img/bg-pattern-mobile.svg);
         }
     }
 
     &__image {
-        position: relative;
-        margin: -10.8rem auto 2rem auto;
-        height: 182px;
+        margin: -10.9rem auto 0;
         width: 240px;
 
         @include m.min-width-767px() {
+            position: relative;
             top: 50%;
-            margin-top: initial;
-            margin-left: -6rem;
+            margin-left: -7rem;
+            height: 100%;
+            width: 400px;
             transform: translateY(-50%);
+            background-image: url(../img/bg-pattern-desktop.svg);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position-y: center;
         }
     }
-
-    &__image {
-        z-index: 1;
-
-        @include m.min-width-767px() {
-            width: 100%;
-            height: auto;
-        }
-    }
-    
 
     &__section {
         position: relative;
@@ -116,7 +104,7 @@
         &:hover {
             color: v.$soft-red;
         }
-        
+
         &::after {
             position: absolute;
             top: 50%;
@@ -124,11 +112,11 @@
             transform: translateY(-50%);
             content: url('../img/icon-arrow-down.svg');
         }
-        
+
         &--selected {
             font-weight: 700;
             color: v.$very-dark-desaturated-blue;
-        
+
             &::after {
                 top: initial;
                 transform: rotate(180deg);
@@ -141,7 +129,7 @@
         overflow: hidden;
         color: v.$dark-grayish-blue;
         transition: max-height .1s linear;
-        
+
         &--visible {
             max-height: 10rem;
             margin-bottom: 1.35rem;
