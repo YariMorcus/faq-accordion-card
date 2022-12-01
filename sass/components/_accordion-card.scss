@@ -31,14 +31,19 @@
 
         &::after {
             position: absolute;
-            bottom: -3.5rem;
+            content: "";
+            bottom: -3rem;
             left: 50%;
+            display: block;
+            width: 240px;
+            height: 104px;
+            background-image: url("../img/bg-pattern-mobile.svg");
+            background-repeat: no-repeat;
+            background-size: 240px 104px;
             transform: translateX(-50%);
-            content: url(../img/bg-pattern-mobile.svg);
 
-            @include m.min-width-767px() {
+            @include m.min-width-991px() {
                 content: "";
-                position: absolute;
                 top: -5rem;
                 right: 6rem;
                 bottom: initial;
