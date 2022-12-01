@@ -27,6 +27,7 @@
 
     &__image-container {
         position: relative;
+        overflow: hidden;
 
         &::after {
             position: absolute;
@@ -34,6 +35,22 @@
             left: 50%;
             transform: translateX(-50%);
             content: url(../img/bg-pattern-mobile.svg);
+
+            @include m.min-width-767px() {
+                content: "";
+                position: absolute;
+                top: -5rem;
+                right: 6rem;
+                bottom: initial;
+                left: initial;
+                display: block;
+                width: 472px;
+                height: 472px;
+                background-image: url("../img/bg-pattern-desktop.svg");
+                background-size: 472px 472px;
+                background-repeat: no-repeat;
+                transform: initial;
+            }
         }
     }
 
@@ -42,16 +59,9 @@
         width: 240px;
 
         @include m.min-width-767px() {
-            position: relative;
-            top: 50%;
-            margin-left: -7rem;
-            height: 100%;
-            width: 400px;
-            transform: translateY(-50%);
-            background-image: url(../img/bg-pattern-desktop.svg);
-            background-size: 100%;
-            background-repeat: no-repeat;
-            background-position-y: center;
+            margin-top: 2.1rem;
+            margin-left: -6rem;
+            width: initial;
         }
     }
 
