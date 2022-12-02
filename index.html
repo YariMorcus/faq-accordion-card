@@ -61,26 +61,87 @@
   </main>
   <script>
 
-    const FAQ_QUESTIONS = document.querySelectorAll('.faq-accordion__question');
+    const QUESTION_CLASS = '.faq-accordion__question';
+    const QUESTION_VISIBLE_CLASS = 'faq-accordion__answer--visible';
+    const QUESTION_SELECTED_CLASS = 'faq-accordion__question--selected';
+    let lastQuestion = null;
 
+    const FAQ_QUESTIONS = document.querySelectorAll(QUESTION_CLASS);
+
+    /**
+    * Toggle the answer
+    * @param {object} question node
+    */
     function toggleAnswer(faqQuestion) {
 
       const FAQ_ANSWER = faqQuestion.parentElement.lastElementChild;
 
-      FAQ_ANSWER.classList.toggle('faq-accordion__answer--visible');
+      FAQ_ANSWER.classList.toggle(QUESTION_VISIBLE_CLASS);
 
     }
 
-    function highlightQuestion(faqQuestion) {
-      faqQuestion.classList.toggle('faq-accordion__question--selected');
+    /**
+    * Hide the answer
+    * @param {object} last question node
+    */
+    function hideAnswer(lastFaqQuestion) {
+
+      const OLD_FAQ_ANSWER = lastFaqQuestion.parentElement.lastElementChild;
+      OLD_FAQ_ANSWER.classList.remove(QUESTION_VISIBLE_CLASS);
+
     }
 
-    FAQ_QUESTIONS.forEach((faqQuestion) => {
-      faqQuestion.addEventListener('click', () => {
+    /**
+     * Toggle highlight of question
+     * @param {object} question node
+    */
+    function toggleHighlightQuestion(faqQuestion) {
 
-        toggleAnswer(faqQuestion);
-        highlightQuestion(faqQuestion);
+      faqQuestion.classList.toggle(QUESTION_SELECTED_CLASS);
+
+    }
+
+    /**
+     * Remove highlight of question
+     * @param {object} last question node
+    */
+    function removeHighlightQuestion(lastFaqQuestion) {
+
+      lastFaqQuestion.classList.remove(QUESTION_SELECTED_CLASS);
+
+    }
+
+    FAQ_QUESTIONS.forEach(faqQuestion => {
+
+      faqQuestion.addEventListener('click', e => {
+
+        if (lastQuestion === null) {
+
+          toggleAnswer(faqQuestion);
+          toggleHighlightQuestion(faqQuestion);
+
+          // Remember current question
+          lastQuestion = e.currentTarget;
+
+        } else if (lastQuestion === faqQuestion) {
+
+          toggleAnswer(faqQuestion);
+          toggleHighlightQuestion(faqQuestion);
+
+        } else { // if user selected a different question than the last one
+
+          hideAnswer(lastQuestion);
+          removeHighlightQuestion(lastQuestion);
+          toggleAnswer(faqQuestion);
+          toggleHighlightQuestion(faqQuestion);
+
+          // Remember current question
+          lastQuestion = e.currentTarget;
+
+        }
+
       })
+
     });
 
   </script>
