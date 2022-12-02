@@ -29,30 +29,30 @@
         <h1 class="faq-accordion__main-heading">FAQ</h1>
 
         <div class="faq-accordion__dropdown-container">
-          <button class="faq-accordion__question">How many team members can I invite?</button>
-          <p class="faq-accordion__answer">You can invite up to 2 additional users on the Free plan. There is no limit on
+          <button class="faq-accordion__question" id="accordion-question-1" type="button" aria-expanded="false" aria-controls="answer-1">How many team members can I invite?</button>
+          <p class="faq-accordion__answer" id="answer-1" role="region" aria-labelledby="accordion-question-1" aria-hidden="true">You can invite up to 2 additional users on the Free plan. There is no limit on
             team members for the Premium plan.</p>
         </div> <!-- .faq-accordion__dropdown-container -->
 
         <div class="faq-accordion__dropdown-container">
-          <button class="faq-accordion__question">What is the maximum file upload size?</button>
-          <p class="faq-accordion__answer">No more than 2GB. All files in your account must fit your allotted storage space.</p>
+          <button class="faq-accordion__question" id="accordion-question-2" type="button" aria-expanded="false" aria-controls="answer-2">What is the maximum file upload size?</button>
+          <p class="faq-accordion__answer" id="answer-2" role="region" aria-labelledby="accordion-question-2" aria-hidden="true">No more than 2GB. All files in your account must fit your allotted storage space.</p>
         </div> <!-- .faq-accordion__dropdown-container -->
 
         <div class="faq-accordion__dropdown-container">
-          <button class="faq-accordion__question">How do I reset my password?</button>
-          <p class="faq-accordion__answer"> Click “Forgot password” from the login page or “Change password” from your profile page.
+          <button class="faq-accordion__question" id="accordion-question-3" type="button" aria-expanded="false" aria-controls="answer-3">How do I reset my password?</button>
+          <p class="faq-accordion__answer" id="answer-3" role="region" aria-labelledby="accordion-question-3" aria-hidden="true"> Click “Forgot password” from the login page or “Change password” from your profile page.
             A reset link will be emailed to you.</p>
         </div> <!-- .faq-accordion__dropdown-container -->
 
         <div class="faq-accordion__dropdown-container">
-          <button class="faq-accordion__question">Can I cancel my subscription?</button>
-          <p class="faq-accordion__answer">Yes! Send us a message and we’ll process your request no questions asked.</p>
+          <button class="faq-accordion__question" id="accordion-question-4" type="button" aria-expanded="false" aria-controls="answer-4">Can I cancel my subscription?</button>
+          <p class="faq-accordion__answer" id="answer-4" role="region" aria-labelledby="accordion-question-4" aria-hidden="true">Yes! Send us a message and we’ll process your request no questions asked.</p>
         </div> <!-- .faq-accordion__dropdown-container -->
 
         <div class="faq-accordion__dropdown-container">
-          <button class="faq-accordion__question">Do you provide additional support?</button>
-          <p class="faq-accordion__answer">Chat and email support is available 24/7. Phone lines are open during normal business hours.</p>
+          <button class="faq-accordion__question" id="accordion-question-5" type="button" aria-expanded="false" aria-controls="answer-5">Do you provide additional support?</button>
+          <p class="faq-accordion__answer" id="answer-5" role="region" aria-labelledby="accordion-question-5" aria-hidden="true">Chat and email support is available 24/7. Phone lines are open during normal business hours.</p>
         </div> <!-- .faq-accordion__dropdown-container -->
 
       </section> <!-- .faq-accordion__section -->
@@ -67,6 +67,24 @@
     let lastQuestion = null;
 
     const FAQ_QUESTIONS = document.querySelectorAll(QUESTION_CLASS);
+
+    /**
+     * Toggle aria attribute values
+     * @param {object} question node
+    */
+   function toggleAriaValues(faqQuestion) {
+
+    const FAQ_ANSWER = faqQuestion.parentElement.lastElementChild;
+
+    if (faqQuestion.getAttribute("aria-expanded") === "false") {
+      faqQuestion.setAttribute("aria-expanded", "true");
+      FAQ_ANSWER.setAttribute("aria-hidden", "false");
+    } else {
+      faqQuestion.setAttribute("aria-expanded", "false");
+      FAQ_ANSWER.setAttribute("aria-hidden", "true");
+    }
+
+   }
 
     /**
     * Toggle the answer
@@ -119,6 +137,7 @@
 
           toggleAnswer(faqQuestion);
           toggleHighlightQuestion(faqQuestion);
+          toggleAriaValues(faqQuestion);
 
           // Remember current question
           lastQuestion = e.currentTarget;
@@ -127,13 +146,16 @@
 
           toggleAnswer(faqQuestion);
           toggleHighlightQuestion(faqQuestion);
+          toggleAriaValues(faqQuestion);
 
         } else { // if user selected a different question than the last one
 
           hideAnswer(lastQuestion);
           removeHighlightQuestion(lastQuestion);
+          toggleAriaValues(lastQuestion);
           toggleAnswer(faqQuestion);
           toggleHighlightQuestion(faqQuestion);
+          toggleAriaValues(faqQuestion);
 
           // Remember current question
           lastQuestion = e.currentTarget;
@@ -143,7 +165,6 @@
       })
 
     });
-
   </script>
 </body>
 </html>
