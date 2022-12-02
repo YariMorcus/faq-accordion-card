@@ -16,7 +16,7 @@
     box-shadow: 0px 45px 77px -50px #000;
 
     @include m.min-width-767px() {
-        width: 65rem;
+        width: 75rem;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
@@ -42,19 +42,22 @@
             background-size: 240px 104px;
             transform: translateX(-50%);
 
-            @include m.min-width-991px() {
-                content: "";
-                top: -5rem;
+            @include m.min-width-767px() {
+                top: -11rem;
                 right: 6rem;
                 bottom: initial;
                 left: initial;
                 display: block;
-                width: 472px;
-                height: 472px;
+                width: 525px;
+                height: 510px;
                 background-image: url("../img/bg-pattern-desktop.svg");
-                background-size: 472px 472px;
+                background-size: 525px 510px;
                 background-repeat: no-repeat;
                 transform: initial;
+            }
+
+            @include m.min-width-991px() {
+                top: -5rem;
             }
         }
     }
@@ -75,12 +78,12 @@
         padding: 6rem 3rem;
 
         @include m.min-width-767px() {
-            padding: 6rem 3rem;
-        }
-
-        @include m.min-width-991px() {
             padding: 6rem 10rem 6rem 1rem;
         }
+
+        // @include m.min-width-991px() {
+        //     padding: 6rem 10rem 6rem 1rem;
+        // }
     }
 
     &__main-heading {
