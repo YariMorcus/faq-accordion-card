@@ -43,21 +43,21 @@
             transform: translateX(-50%);
 
             @include m.min-width-767px() {
-                top: -11rem;
+                top: -23rem;
                 right: 6rem;
                 bottom: initial;
                 left: initial;
                 display: block;
-                width: 525px;
-                height: 510px;
+                width: 700px;
+                height: 685px;
                 background-image: url("../img/bg-pattern-desktop.svg");
-                background-size: 525px 510px;
+                background-size: 700px 685px;
                 background-repeat: no-repeat;
                 transform: initial;
             }
 
             @include m.min-width-991px() {
-                top: -5rem;
+                top: -21rem;
             }
         }
     }
@@ -80,10 +80,6 @@
         @include m.min-width-767px() {
             padding: 6rem 10rem 6rem 1rem;
         }
-
-        // @include m.min-width-991px() {
-        //     padding: 6rem 10rem 6rem 1rem;
-        // }
     }
 
     &__main-heading {
