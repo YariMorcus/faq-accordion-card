@@ -17,8 +17,9 @@
 
     @include m.min-width-767px() {
         position: relative;
-        width: 72rem;
         display: grid;
+        margin-top: initial;
+        width: 72rem;
         grid-template-columns: repeat(2, 1fr);
 
         &::before {
