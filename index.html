@@ -61,110 +61,136 @@
   </main>
   <script>
 
-    const QUESTION_CLASS = '.faq-accordion__question';
-    const QUESTION_VISIBLE_CLASS = 'faq-accordion__answer--visible';
-    const QUESTION_SELECTED_CLASS = 'faq-accordion__question--selected';
-    let lastQuestion = null;
+    const ACCORDION_TITLES = document.querySelectorAll('.faq-accordion__question');
+    const IS_OPEN_CLASS = 'is-open';
+    const ANSWER_VISIBLE_CLASS = 'faq-accordion__answer--visible';
 
-    const FAQ_QUESTIONS = document.querySelectorAll(QUESTION_CLASS);
+    ACCORDION_TITLES.forEach(accordionTitle => {
 
-    /**
-     * Toggle aria attribute values
-     * @param {object} question node
-    */
-   function toggleAriaValues(faqQuestion) {
+      accordionTitle.addEventListener('click', e => {
 
-    const FAQ_ANSWER = faqQuestion.parentElement.lastElementChild;
+        if (accordionTitle.classList.contains(IS_OPEN_CLASS)) {
+          accordionTitle.classList.remove(IS_OPEN_CLASS);
+          e.target.nextElementSibling.classList.remove(ANSWER_VISIBLE_CLASS);
+        } else {
+          const ACCORDION_TITLES_OPEN = document.querySelectorAll(`.${IS_OPEN_CLASS}`);
+          ACCORDION_TITLES_OPEN.forEach(openAccordions => {
+            openAccordions.classList.remove(IS_OPEN_CLASS);
+            openAccordions.nextElementSibling.classList.remove(ANSWER_VISIBLE_CLASS);
+          });
 
-    if (faqQuestion.getAttribute("aria-expanded") === "false") {
-      faqQuestion.setAttribute("aria-expanded", "true");
-      FAQ_ANSWER.setAttribute("aria-hidden", "false");
-    } else {
-      faqQuestion.setAttribute("aria-expanded", "false");
-      FAQ_ANSWER.setAttribute("aria-hidden", "true");
-    }
-
-   }
-
-    /**
-    * Toggle the answer
-    * @param {object} question node
-    */
-    function toggleAnswer(faqQuestion) {
-
-      const FAQ_ANSWER = faqQuestion.parentElement.lastElementChild;
-
-      FAQ_ANSWER.classList.toggle(QUESTION_VISIBLE_CLASS);
-
-    }
-
-    /**
-    * Hide the answer
-    * @param {object} last question node
-    */
-    function hideAnswer(lastFaqQuestion) {
-
-      const OLD_FAQ_ANSWER = lastFaqQuestion.parentElement.lastElementChild;
-      OLD_FAQ_ANSWER.classList.remove(QUESTION_VISIBLE_CLASS);
-
-    }
-
-    /**
-     * Toggle highlight of question
-     * @param {object} question node
-    */
-    function toggleHighlightQuestion(faqQuestion) {
-
-      faqQuestion.classList.toggle(QUESTION_SELECTED_CLASS);
-
-    }
-
-    /**
-     * Remove highlight of question
-     * @param {object} last question node
-    */
-    function removeHighlightQuestion(lastFaqQuestion) {
-
-      lastFaqQuestion.classList.remove(QUESTION_SELECTED_CLASS);
-
-    }
-
-    FAQ_QUESTIONS.forEach(faqQuestion => {
-
-      faqQuestion.addEventListener('click', e => {
-
-        if (lastQuestion === null) {
-
-          toggleAnswer(faqQuestion);
-          toggleHighlightQuestion(faqQuestion);
-          toggleAriaValues(faqQuestion);
-
-          // Remember current question
-          lastQuestion = e.currentTarget;
-
-        } else if (lastQuestion === faqQuestion) {
-
-          toggleAnswer(faqQuestion);
-          toggleHighlightQuestion(faqQuestion);
-          toggleAriaValues(faqQuestion);
-
-        } else { // if user selected a different question than the last one
-
-          hideAnswer(lastQuestion);
-          removeHighlightQuestion(lastQuestion);
-          toggleAriaValues(lastQuestion);
-          toggleAnswer(faqQuestion);
-          toggleHighlightQuestion(faqQuestion);
-          toggleAriaValues(faqQuestion);
-
-          // Remember current question
-          lastQuestion = e.currentTarget;
-
+          accordionTitle.classList.add(IS_OPEN_CLASS);
+          e.target.nextElementSibling.classList.add(ANSWER_VISIBLE_CLASS);
         }
 
       })
 
     });
+
+
+  //   const QUESTION_VISIBLE_CLASS = 'faq-accordion__answer--visible';
+  //   const QUESTION_SELECTED_CLASS = 'faq-accordion__question--selected';
+  //   let lastQuestion = null;
+
+  //   const FAQ_QUESTIONS = document.querySelectorAll(QUESTION_CLASS);
+
+  //   /**
+  //    * Toggle aria attribute values
+  //    * @param {object} question node
+  //   */
+  //  function toggleAriaValues(faqQuestion) {
+
+  //   const FAQ_ANSWER = faqQuestion.parentElement.lastElementChild;
+
+  //   if (faqQuestion.getAttribute("aria-expanded") === "false") {
+  //     faqQuestion.setAttribute("aria-expanded", "true");
+  //     FAQ_ANSWER.setAttribute("aria-hidden", "false");
+  //   } else {
+  //     faqQuestion.setAttribute("aria-expanded", "false");
+  //     FAQ_ANSWER.setAttribute("aria-hidden", "true");
+  //   }
+
+  //  }
+
+  //   /**
+  //   * Toggle the answer
+  //   * @param {object} question node
+  //   */
+  //   function toggleAnswer(faqQuestion) {
+
+  //     const FAQ_ANSWER = faqQuestion.parentElement.lastElementChild;
+
+  //     FAQ_ANSWER.classList.toggle(QUESTION_VISIBLE_CLASS);
+
+  //   }
+
+  //   /**
+  //   * Hide the answer
+  //   * @param {object} last question node
+  //   */
+  //   function hideAnswer(lastFaqQuestion) {
+
+  //     const OLD_FAQ_ANSWER = lastFaqQuestion.parentElement.lastElementChild;
+  //     OLD_FAQ_ANSWER.classList.remove(QUESTION_VISIBLE_CLASS);
+
+  //   }
+
+  //   /**
+  //    * Toggle highlight of question
+  //    * @param {object} question node
+  //   */
+  //   function toggleHighlightQuestion(faqQuestion) {
+
+  //     faqQuestion.classList.toggle(QUESTION_SELECTED_CLASS);
+
+  //   }
+
+  //   /**
+  //    * Remove highlight of question
+  //    * @param {object} last question node
+  //   */
+  //   function removeHighlightQuestion(lastFaqQuestion) {
+
+  //     lastFaqQuestion.classList.remove(QUESTION_SELECTED_CLASS);
+
+  //   }
+
+  //   FAQ_QUESTIONS.forEach(faqQuestion => {
+
+  //     faqQuestion.addEventListener('click', e => {
+
+  //       if (lastQuestion === null) {
+
+  //         toggleAnswer(faqQuestion);
+  //         toggleHighlightQuestion(faqQuestion);
+  //         toggleAriaValues(faqQuestion);
+
+  //         // Remember current question
+  //         lastQuestion = e.currentTarget;
+
+  //       } else if (lastQuestion === faqQuestion) {
+
+  //         toggleAnswer(faqQuestion);
+  //         toggleHighlightQuestion(faqQuestion);
+  //         toggleAriaValues(faqQuestion);
+
+  //       } else { // if user selected a different question than the last one
+
+  //         hideAnswer(lastQuestion);
+  //         removeHighlightQuestion(lastQuestion);
+  //         toggleAriaValues(lastQuestion);
+  //         toggleAnswer(faqQuestion);
+  //         toggleHighlightQuestion(faqQuestion);
+  //         toggleAriaValues(faqQuestion);
+
+  //         // Remember current question
+  //         lastQuestion = e.currentTarget;
+
+  //       }
+
+  //     })
+
+  //   });
   </script>
 </body>
 </html>

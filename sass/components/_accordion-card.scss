@@ -152,7 +152,7 @@
             content: url('../img/icon-arrow-down.svg');
         }
 
-        &--selected {
+        &.is-open {
             font-weight: 700;
             color: v.$very-dark-desaturated-blue;
 
@@ -167,13 +167,13 @@
         max-height: 0;
         overflow: hidden;
         color: v.$dark-grayish-blue;
-        transition: max-height .1s linear;
+        transition: max-height .3s linear;
 
         &--visible {
             max-height: 10rem;
             margin-bottom: 1.35rem;
             line-height: initial;
-            transition: max-height 1s linear;
+            transition: max-height .5s linear;
         }
     }
 }
