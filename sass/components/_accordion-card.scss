@@ -167,12 +167,11 @@
         max-height: 0;
         overflow: hidden;
         color: v.$dark-grayish-blue;
-        transition: max-height .3s linear;
+        transition: max-height .3s linear, margin-bottom .3s linear;
 
         &--visible {
             max-height: 10rem;
             margin-bottom: 1.35rem;
-            line-height: initial;
             transition: max-height .5s linear;
         }
     }
