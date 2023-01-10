@@ -1,18 +1,89 @@
-# FAQ accordion card
+# Frontend Mentor - FAQ accordion card
 
-This is a challenge offered by [Frontend Mentor](https://www.frontendmentor.io/challenges/faq-accordion-card-XlyjD0Oam), and being worked on by Yari Morcus.
+This is a solution to the [FAQ accordion card challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/faq-accordion-card-XlyjD0Oam). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-## Brief
+### Difficulty: `newbie`
 
-Your challenge is to build out this FAQ accordion card and get it looking as close to the design as possible.
+![](screenshot.png)
 
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
+## Table of contents
 
-Your users should be able to:
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
 
-View the optimal layout for the component depending on their device's screen size
-See hover states for all interactive elements on the page
-Hide/Show the answer to a question when the question is clicked
-Bonus: Complete the challenge without using JavaScript
+## Overview
 
-Source: [Frontend Mentor challenge page](https://www.frontendmentor.io/challenges/faq-accordion-card-XlyjD0Oam)
+### The challenge
+
+To build the FAQ accordion card according to the given designs as close as possible.
+The users should be able to:
+- View the optimal layout for the component depending on their device's screen size
+- See hover states for all interactive elements on the page
+- Hide/Show the answer to a question when the question is clicked
+- Bonus: Complete the challenge without using JavaScript
+
+### Links
+
+- Solution URL: [Open GitHub repository](https://github.com/YariMorcus/faq-accordion-card)
+- Live Site URL: [open GitHub Pages of repository](https://yarimorcus.github.io/faq-accordion-card/)
+
+## My process
+
+### Built with
+
+- Semantic HTML5 markup
+- CSS _(BEM naming convention used, [see getbem.com](http://getbem.com) for more information)_
+- Grid
+- Mobile-first workflow
+- [Node.js](https://nextjs.org/) - Open source and multiplatform JavaScript runtime environment
+- [NPM](https://www.npmjs.com/) - Package Manager for Node JavaScript platform
+- [Browsersync](https://browsersync.io) - Synchronous browser testing (in collaboration with Gulp)
+- [Gulp](https://gulpjs.com) - Build tool used as workflow automation tool
+- [Sass](https://sass-lang.com/) - CSS Preprocessor (in collaboration with Gulp)
+- [GitHub](https://github.com/) - Technological platform based on Git
+- [Git](https://git-scm.com/) - Free and open source distributed version control system
+
+### What I learned
+
+1. Always use semantic standards compliant HTML
+2. To keep testing the application for Web Accessibility
+3. Create the application as accurately as possible based on the designs
+4. How to organize my SCSS with Sass partials and modules, and keep my SCSS organized
+5. That CSS background images are easier to control
+6. How I need to use JavaScript to create an accordion
+
+### Continued development
+
+The way I want to continue to develop myself is by focusing on laying out a proper foundation of HTML, CSS, and JavaScript.
+This so I can build quality websites for clients by just using the core languages of the Web.
+At the present, I am working on the above things by going through (interactive) articles on the MDN Web Docs (see chapter [Useful resources](#useful-resources)).
+
+Another way I want to improve my knowledge of these subjects is to do more challenges that [Frontend Mentor](https://www.frontendmentor.io/challenges) is offering, starting at the lowest level, and building that up to the more advanced ones.
+
+Besides the above, I want to continue to develop myself by using several tools more often to improve my workflow. and spend less time doing things that can be automated.
+
+A few tools that I will start using more often are:
+1. Gulp
+2. Git
+3. GitHub
+
+_I will learn the above points in between but do not want to focus too much on those at the moment._
+
+As soon as I am capable of creating quality websites with the core languages of the Web, I will start to learn JavaScript libraries and frameworks. Both of these change over time, so I do not want to spend my time on those before I have a solid understanding of prior mentioned languages.
+
+### Useful resources
+
+- [Transfonter](https://transfonter.org/) - Has been used to convert the downloaded font files to woff and woff2 (most recent font formats, supported in all major browsers), and generate the corresponding `@font-face` css rulesets
+- [FAQ accordion card challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/faq-accordion-card-XlyjD0Oam)
+
+## Author
+
+- LinkedIn - [Yari Morcus](https://www.linkedin.com/in/yarimorcus)
+- Frontend Mentor - [@YariMorcus](https://www.frontendmentor.io/profile/YariMorcus)
