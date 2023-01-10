@@ -70,22 +70,37 @@
       accordionTitle.addEventListener('click', () => {
 
         if (accordionTitle.classList.contains(IS_OPEN_CLASS)) {
+
           accordionTitle.classList.remove(IS_OPEN_CLASS);
           accordionTitle.nextElementSibling.classList.remove(ANSWER_VISIBLE_CLASS);
+
+          // Accessibility improvements
           accordionTitle.setAttribute('aria-expanded', 'false');
           accordionTitle.nextElementSibling.setAttribute('aria-hidden', 'true');
+
         } else {
+
           const ACCORDION_TITLES_OPEN = document.querySelectorAll(`.${IS_OPEN_CLASS}`);
+
           ACCORDION_TITLES_OPEN.forEach(openAccordions => {
+
             openAccordions.classList.remove(IS_OPEN_CLASS);
+
+            // Accessibility improvements
             openAccordions.setAttribute('aria-expanded', 'false');
             openAccordions.nextElementSibling.setAttribute('aria-hidden', 'true');
             openAccordions.nextElementSibling.classList.remove(ANSWER_VISIBLE_CLASS);
+
           });
+
           accordionTitle.classList.add(IS_OPEN_CLASS);
+
+          // Accessibility improvements
           accordionTitle.setAttribute('aria-expanded', 'true');
           accordionTitle.nextElementSibling.setAttribute('aria-hidden', 'false');
+
           accordionTitle.nextElementSibling.classList.add(ANSWER_VISIBLE_CLASS);
+
         }
 
       })
