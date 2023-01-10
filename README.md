@@ -29,6 +29,8 @@ The users should be able to:
 - Hide/Show the answer to a question when the question is clicked
 - Bonus: Complete the challenge without using JavaScript
 
+  _This can be achieved with the `<details>` tag in combination with `<summary>`._
+
 ### Links
 
 - Solution URL: [Open GitHub repository](https://github.com/YariMorcus/faq-accordion-card)
