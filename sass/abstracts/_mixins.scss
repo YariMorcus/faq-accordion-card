@@ -10,8 +10,8 @@
     }
 }
 
-@mixin orientation-landscape() {
-    @media (orientation: landscape) {
+@mixin max-width-767px-orientation-landscape() {
+    @media (max-width: 767px) and (orientation: landscape) {
         @content;
     }
 }
